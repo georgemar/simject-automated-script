@@ -2,10 +2,15 @@
 #Creator george_marGR on Twitter
 simjectdir="/opt/simject"
 tweaksdir="/Users/gmar/Tweaks"
-
 if [ $# -ne 1 ]; then
   echo "You must give tweak name as arg1"
 else
+  echo "Running simulator"
+  sim=`ps -x | grep /Library/Developer/CoreSimulator/Profiles/Runtimes/iOS | wc -l`
+  if [ $sim == 1 ]; then
+    open -a Simulator
+    sleep 10;
+  fi
   echo "Theak name is => "$1
   echo "Accessing the directory => "$tweaksdir"/"$1
   prev=`pwd`
