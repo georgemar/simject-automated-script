@@ -5,9 +5,9 @@ tweaksdir="/Users/gmar/Tweaks"
 if [ $# -ne 1 ]; then
   echo "You must give tweak name as arg1"
 else
-  echo "Running simulator"
   sim=`ps -x | grep /Library/Developer/CoreSimulator/Profiles/Runtimes/iOS | wc -l`
   if [ $sim == 1 ]; then
+    echo "Running simulator"
     open -a Simulator
     sleep 10;
   fi
